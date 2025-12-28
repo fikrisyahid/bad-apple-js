@@ -5,7 +5,7 @@ function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function v1() {
+export default async function v1() {
   const fileNames = fs.readdirSync("./src/images");
   let frames = [];
 
@@ -76,5 +76,3 @@ async function v1() {
     await delay(67);
   }
 }
-
-export default v1;

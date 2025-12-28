@@ -1,3 +1,4 @@
+import delay from "./utils/delay.js";
 import getPixelsAsync from "./utils/get-pixels-async.js";
 import fs from "fs";
 
@@ -25,10 +26,6 @@ const illumination = [
   "$",
   "@",
 ];
-
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 function getPixelData({ pixels, pixelWidth, pixelHeight }) {
   const pixelData = [];

@@ -1,6 +1,7 @@
 import getPixelsAsync from "./utils/get-pixels-async.js";
 import fs from "fs";
 import pLimit from "p-limit";
+import delay from "./utils/delay.js";
 
 const config = {
   charWidth: 6,
@@ -24,10 +25,6 @@ const illumination = [
   "$",
   "@",
 ];
-
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 function getCharColor({ pixels, xFrame, yFrame, charWidth, charHeight }) {
   let totalBrightness = 0;

@@ -95,14 +95,11 @@ export default async function v2() {
       });
 
       completed++;
-      if (completed % 5 === 0 || completed === fileNames.length) {
-        console.clear();
-        console.log(
-          `Progress: ${completed}/${fileNames.length} (${Math.round(
-            (completed / fileNames.length) * 100
-          )}%)`
-        );
-      }
+      process.stdout.write(
+        `\rProgress: ${completed}/${fileNames.length} (${Math.round(
+          (completed / fileNames.length) * 100
+        )}%)`
+      );
 
       return frame;
     });
